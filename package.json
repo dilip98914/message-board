@@ -1,13 +1,13 @@
 {
   "name": "fullStackMessageBoard",
   "version": "1.0.0",
-  "description": "",
+  "description": "simple message board application",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "dilip98914@gmail.com",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
