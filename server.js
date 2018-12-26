@@ -10,6 +10,8 @@ app.use(morgan('tiny'));
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(express.static(path.join(__dirname,'client/dist')));
+
 const connString=process.env.MONGODB_URI;
 const db=monk(connString);
 let messages=db.get('messages');
