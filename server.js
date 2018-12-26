@@ -10,9 +10,9 @@ app.use(morgan('tiny'));
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname,'client/dist')));
+app.use(express.static(path.join(__dirname,'dist')));
 
-const connString=process.env.MONGODB_URI;
+const connString=process.env.MONGODB_URI|| 'mongodb://dilip:dilip123@ds143594.mlab.com:43594/message-board' ;
 const db=monk(connString);
 let messages=db.get('messages');
 
@@ -81,7 +81,7 @@ app.post('/messages',(req,res)=>{
 // }
 
 app.get('*',(req,res)=>{
-	res.sendFile(path.join(__dirname,'/client/dist/index.html'));
+	res.sendFile(path.join(__dirname,'dist','index.html'));
 });
 
 const port=process.env.PORT || 5001;
